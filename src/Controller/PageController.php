@@ -169,7 +169,7 @@ class PageController extends AbstractController
 
         // Utilisation de la méthode render qui permet de récupérer un fichier de view twig
         return $this->render('home.html.twig', [
-            // Découpe le tableau 'recipes' et prend ses 3 dernières recettes (avec l'ordre décroissant du dessus)
+            // Découpe le tableau 'recipes' et prend ses 3 dernières recettes (dans l'ordre décroissant défini au dessus)
             'recipes' => array_slice($recipes, 0, 3),
         ]);
     }
