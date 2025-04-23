@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<link rel="stylesheet" href="../public/assets/css/style.css">
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul class="nav-links">
+					<li>
+                        {# Le lien fonctionne avec le nom donné à ma route #}
+						<a href="{{ path('home') }}">Accueil</a>
+					</li>
+					<li>
+						<a href="{{ path('recipe-liste') }}">Toutes les recettes</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<main>

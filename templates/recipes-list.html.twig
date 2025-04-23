@@ -1,0 +1,28 @@
+{% include 'partial/_header.html.twig' %}
+
+<h1>Bienvenue sur la page des recettes</h1>
+
+<section>
+
+	{# Boucle pour afficher les recettes du tableau 'recipes' #}
+	{% for recipe in recipes %}
+		<article class="recipe">
+			<h2>{{ recipe.title }}</h2>
+			<img src="{{ recipe.image }}" alt="{{ recipe.title }}">
+			<p>{{ recipe.description }}</p>
+			<ul>
+				{% for ingredient in recipe.ingredients %}
+					<li>{{ ingredient }}</li>
+				{% endfor %}
+			</ul>
+			<p>Catégorie:
+				{{ recipe.category }}</p>
+			<p>Date de création:
+				{{ recipe.createdAt | date }}</p>
+		</article>
+	{% endfor %}
+
+
+</section>
+
+{% include 'partial/_footer.html.twig' %}
