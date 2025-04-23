@@ -164,12 +164,12 @@ class PageController extends AbstractController
             // Crée des objets DateTime à partir des dates de création
             $dateA = new DateTime($a['createdAt']);
             $dateB = new DateTime($b['createdAt']);
-            return $dateB <=> $dateA; // Compare les dates et retourne l'ordre décroissant
+            return $dateB <=> $dateA; // Compare les dates et les retourne dans l'ordre décroissant (plus récent au plus vieux)
         });
 
         // Utilisation de la méthode render qui permet de récupérer un fichier de view twig
         return $this->render('home.html.twig', [
-            // Prend les 3 premières recettes du tableau trié dans l'ordre décroissant
+            // Découpe le tableau 'recipes' et prend ses 3 dernières recettes (avec l'ordre décroissant du dessus)
             'recipes' => array_slice($recipes, 0, 3),
         ]);
     }
